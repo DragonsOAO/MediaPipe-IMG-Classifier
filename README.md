@@ -1,1 +1,1 @@
-# Flower-Classifier
+# MediaPipe-IMG-Classifier
