@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>圖像分類器 (自訂模型)</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🖼️ 圖像分類器 (自訂模型)</h1>
+
+    <p id="modelStatus">模型正在載入中...</p>
+
+    <div style="margin-bottom: 20px; max-width: 640px; margin-left: auto; margin-right: auto; text-align: center;">
+        <label for="modelSelector">選擇模型:</label>
+        <select id="modelSelector" class="mdc-select__native-control" style="padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+            </select>
+        <p id="modelStatusDetail" style="font-size: 0.9em; color: gray; margin-top: 5px;">當前模型: N/A</p>
+    </div>
+    <hr>
+    <section id="demos" class="invisible">
+        
+      <h2>📸 視訊鏡頭即時判定</h2>
+      <p>點擊 "啟用視訊鏡頭" 按鈕，並將您的目標對準鏡頭！</p>
+      
+      <div id="liveView" class="videoView">
+          
+          <button id="enableWebcamButton" class="mdc-button mdc-button--raised mdc-button--primary">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">啟用視訊鏡頭</span>
+          </button>
+          
+          <button id="disableWebcamButton" class="mdc-button mdc-button--raised mdc-button--danger removed">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">關閉視訊鏡頭</span>
+          </button>
+          
+          <video id="webcam" autoplay playsinline></video>
+          <p id="classificationResultDisplay"></p> 
+      </div>
+
+      <hr>
+
+      <h2>📤 上傳圖片判定</h2>
+              <div id="uploadedImageContainer" tabindex="0"> 
+                  
+                  <p id="pasteHint" style="color:#666; font-style: italic;">
+                      點擊這裡後，可選擇檔案或直接貼上圖片 (Ctrl+V/Cmd+V)
+                  </p>
+
+                  <label for="fileInput" class="mdc-button mdc-button--outlined custom-file-upload">
+                      <span class="mdc-button__label">📁 選擇檔案</span> </label>
+                      <p id="fileNameDisplay" style="color: #000000; "></p>
+                  
+                  <input type="file" id="fileInput" accept="image/*" class="hidden-file-input">
+                  
+                  <img id="uploadedImage" src="#" alt="上傳的圖片">
+                  <p id="uploadResultDisplay">請選擇一張圖片進行分類。</p>
+              </div>
+    </section>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

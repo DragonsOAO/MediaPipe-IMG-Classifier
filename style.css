@@ -1,0 +1,94 @@
+/* 官方範例的隱藏和顯示樣式 */
+.invisible { display: none; }
+.removed { display: none; }
+
+/* 設置 liveView 容器樣式 */
+#liveView { 
+    position: relative; 
+    width: 100%; 
+    max-width: 640px; /* 限制最大寬度 */
+    margin: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#webcam { 
+    width: 100%; 
+    height: auto; 
+    transform: scaleX(-1); /* 鏡像翻轉 */
+}
+
+/* 分類結果顯示樣式 (浮動在視訊流上方) */
+#classificationResultDisplay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 8px 10px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+/* 圖片分類的容器樣式 - 針對上傳圖片 */
+#uploadedImageContainer {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px dashed #00796b;
+    text-align: center;
+    max-width: 640px; /* 限制最大寬度 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 讓容器可以被點擊或聚焦，以接受貼上事件 */
+    outline: none; 
+    cursor: pointer;
+}
+.custom-file-upload {
+    cursor: pointer; 
+    display: inline-flex; /* 關鍵：讓它被 text-align: center; 影響 */
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+#uploadedImage {
+    width: 50%;
+    height: auto;
+    display: none; /* 預設隱藏 */
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+.hidden-file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+#uploadResultDisplay {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00796b;
+    min-height: 1.2em; /* 確保在沒有結果時也能保持空間 */
+}
+.info { /* 上傳圖片結果的樣式 */
+    text-align: center;
+    background-color: #e0f7fa;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+/* 按鈕樣式 */
+.mdc-button {
+    margin: 10px 0;
+}
+h1, h2, p {
+    text-align: center;
+}
